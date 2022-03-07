@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 23:22:46 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/06 03:06:29 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:21:09 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ char	*get_next_line(int fd)
 	return (new);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		int fd = open(av[1], O_RDONLY, 777);
-		printf("%s",get_next_line(fd));
-	}
-}
+// int main(int ac, char **av)
+// {
+// 	if (ac == 2)
+// 	{
+// 		int fd = open(av[1], O_RDONLY, 777);
+// 		printf("%s",get_next_line(fd));
+// 	}
+// }
