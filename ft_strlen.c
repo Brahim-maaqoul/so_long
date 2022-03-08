@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:40:28 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/05 22:40:33 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/08 06:13:58 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] && str[i] != '\n')
 		i++;
 	return (i);
 }
