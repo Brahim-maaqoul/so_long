@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/08 08:18:36 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/09 06:43:18 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ int  ft_check_rocks(char **str, int i)
 
     j = 0;
     len = ft_strlen(str[i]) - 1;
-    while (str[i][j])
+    while (str[i][j] && str[i][j] != '\n')
     {
-        if (str[i][j] == '-' || str[i][j] == '+')
+        if ((str[i][j] != '1' && str[i][j] != '0')
+            && (str[i][j] != 'C' && str[i][j] != 'E'))
             return (0);
         j++;
     }
@@ -44,7 +45,7 @@ int  ft_check_rocks(char **str, int i)
     return (1);
 }
 
-int  ft_check_len(char **str)
+static int  ft_check_len(char **str)
 {
     int i;
     int j;
@@ -64,3 +65,26 @@ int  ft_check_len(char **str)
     return (1);
 }
 
+static int ft_check_player(char **str)
+{
+    int i;
+    int j;
+    int p;
+
+    i = 0;
+    p = 0;
+    while (str[i])
+    {
+        j = 0;
+        while (str[i][j] && str[i][j] != '\n')
+        {
+            if (str[i][j] == 'P')
+                p++;
+            j++;
+        }
+        i++;
+    }
+    if (p != 1)
+        return (0);
+    return (1);
+}
