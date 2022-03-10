@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/09 06:43:18 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:37:46 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int  ft_check_walls(char **str, int i)
     return (1);
 }
 
-int  ft_check_rocks(char **str, int i)
+static int  ft_check_rocks(char **str, int i)
 {
     int len;
     int j;
@@ -36,7 +36,7 @@ int  ft_check_rocks(char **str, int i)
     while (str[i][j] && str[i][j] != '\n')
     {
         if ((str[i][j] != '1' && str[i][j] != '0')
-            && (str[i][j] != 'C' && str[i][j] != 'E'))
+            && (str[i][j] != 'C' && str[i][j] != 'E' && str[i][j] != 'P'))
             return (0);
         j++;
     }
@@ -87,4 +87,26 @@ static int ft_check_player(char **str)
     if (p != 1)
         return (0);
     return (1);
+}
+
+void    ft_check_map(char **str)
+{
+    int i;
+    int nbr;
+
+    i = 0;
+    nbr = 0;
+    while (str[nbr])
+        nbr++;
+    nbr--;
+    if (!ft_check_walls(str, i) || !ft_check_walls(str, nbr))
+        ft_put_err();
+    if (!ft_check_len(str) || !ft_check_player(str))
+        ft_put_err();
+    while (str[i])
+    {
+        if (!ft_check_rocks(str, i))
+            ft_put_err();
+        i++;
+    }
 }
