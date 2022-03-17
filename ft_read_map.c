@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 03:48:37 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 04:08:07 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/17 07:23:37 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ char    **ft_read_map(t_game game, char **av)
     i++;
     str[i] = NULL;
     game.map = str;
-    // free_tab(str);
     return (game.map);
 }
 int main(int ac, char **av)
@@ -89,14 +88,14 @@ int main(int ac, char **av)
     char    **str = ft_read_map(game, av);
     int i = 0;
     ft_check_map(str);
-    // check = ft_check_player(str);
     while (str[i])
     {
-        printf("%s\n", str[i]);
+        printf("%s", str[i]);
         // if (check)
         //     printf("player\n");
         // else
         //     printf("not player\n");
         i++;
     }
+    free_tab(str);
 }

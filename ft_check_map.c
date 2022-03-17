@@ -6,41 +6,18 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 03:54:52 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/17 07:05:24 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-// static int	ft_check_newlines(char **str)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	j = 0;
-// 	if (!str)
-// 		return (0);
-// 	while (str[i])
-// 	{
-// 		j = 0;
-// 		while (str[i][j])
-// 		{
-// 			if (str[i][j] == '\n')
-// 				return (0);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	return (1);
-// }
 
 static int	ft_check_walls(char **str, int i)
 {
 	int	j;
 
 	j = 0;
-	while (str[i][j] && str[i][j] != '\n')
+	while (str[i][j])
 	{
 		if (str[i][j] != '1')
 			return (0);
@@ -105,7 +82,7 @@ static int	ft_check_player(char **str)
 	while (str[i])
 	{
 		j = 0;
-		while (str[i][j] && str[i][j] != '\n')
+		while (str[i][j])
 		{
 			if (str[i][j] == 'P')
 				p++;
@@ -125,8 +102,6 @@ void	ft_check_map(char **str)
 
 	i = 0;
 	nbr = 0;
-	// if (!ft_check_newlines(str))
-	// 	ft_put_err();
 	while (str[nbr])
 		nbr++;
 	nbr--;
@@ -135,13 +110,5 @@ void	ft_check_map(char **str)
 		ft_put_err();
 	if (!ft_check_len(str) || !ft_check_player(str))
 		ft_put_err();
-	// while (str[i])
-	// {
-	// 	if (!ft_check_rocks(str, i))
-	// 	{
-	// 		ft_putstr_fd("err3", 1);
-	// 		exit(0);
-	// 	}
-	// 	i++;
-	// }
+
 }
