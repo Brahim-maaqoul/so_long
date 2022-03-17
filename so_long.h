@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/08 08:11:37 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/17 04:00:45 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ typedef struct s_player
 typedef struct s_game
 {
     t_player    player;
+    void        *mlx;
+    void        *window;
     char        **map;
     char        *wall;
     char        *path;
     int         width;
     int         height;
+    int         steps;
 }           t_game;
 
 
@@ -46,9 +49,9 @@ char	*ft_strchr(char *str, int c);
 char	*ft_read(char	*str, int fd);
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
-int  ft_check_len(char **str);
-int  ft_check_rocks(char **str, int i);
-int	ft_isdigit(char n);
-int	ft_atoi(const char	*str);
+void	ft_putstr_fd(char *s, int fd);
+void    ft_put_err(void);
+void    ft_check_map(char **str);
+void	free_tab(char **tab);
 
 # endif
