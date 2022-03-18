@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 07:05:24 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 06:35:42 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,8 @@ void	ft_check_map(char **str)
 	if (!ft_check_walls(str, i) || !ft_check_walls(str, nbr)
 		|| !ft_check_rocks(str))
 		ft_put_err();
-	if (!ft_check_len(str) || !ft_check_player(str))
+	if (!ft_check_len(str) || !ft_check_player(str)
+		|| !ft_check_ce(str))
 		ft_put_err();
 
 }

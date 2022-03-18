@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 07:22:32 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 06:31:47 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void	ft_putstr_fd(char *s, int fd);
 void    ft_put_err(void);
 void    ft_check_map(char **str);
 void	free_tab(char **tab);
+int     ft_check_ce(char **str);
 
 # endif
