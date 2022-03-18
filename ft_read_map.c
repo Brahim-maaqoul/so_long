@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 03:48:37 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 07:23:37 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 07:45:44 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int  ft_count_lines(char **av)
     return (i);
 }
 
-static char    **ft_read_map1(t_game game, char **av)
+static char    **ft_read_map1(char **av)
 {
     int     nbr;
     int     fd;
@@ -57,7 +57,7 @@ static char    **ft_read_map1(t_game game, char **av)
     return (str);
 }
 
-char    **ft_read_map(t_game game, char **av)
+char    **ft_read_map(t_game *game, char **av)
 {
     int     i;
     int     len;
@@ -66,7 +66,7 @@ char    **ft_read_map(t_game game, char **av)
     char    **str;
 
     i = 0;
-    str = ft_read_map1(game, av);
+    str = ft_read_map1(av);
     len = ft_strlen(str[0]);
     lines = ft_count_lines(av);
     while (i < lines - 1)
@@ -78,24 +78,26 @@ char    **ft_read_map(t_game game, char **av)
     }
     i++;
     str[i] = NULL;
-    game.map = str;
-    return (game.map);
+    game->map = str;
+    game->img_height = ft_strlen(game->map[0]);
+    game->img_height = lines;
+    return (game->map);
 }
-int main(int ac, char **av)
-{
-    t_game game;
-    int check;
-    char    **str = ft_read_map(game, av);
-    int i = 0;
-    ft_check_map(str);
-    while (str[i])
-    {
-        printf("%s", str[i]);
-        // if (check)
-        //     printf("player\n");
-        // else
-        //     printf("not player\n");
-        i++;
-    }
-    free_tab(str);
-}
+// int main(int ac, char **av)
+// {
+//     t_game *game;
+//     int check;
+//     char    **str = ft_read_map(game, av);
+//     int i = 0;
+//     ft_check_map(str);
+//     while (str[i])
+//     {
+//         printf("%s", str[i]);
+//         // if (check)
+//         //     printf("player\n");
+//         // else
+//         //     printf("not player\n");
+//         i++;
+//     }
+//     free_tab(str);
+// }
