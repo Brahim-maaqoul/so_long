@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 06:31:47 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 07:34:42 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,35 @@
 # include <mlx.h>
 # include <fcntl.h>
 # include <stdio.h>
-
-typedef struct s_player
-{
-    int x;
-    int y;
-}           t_player;
-
+# include <string.h>
 
 typedef struct s_game
 {
-    t_player    player;
     void        *mlx;
     void        *window;
+    void        *player;
+    void        *coin;
+    void        *door;
+    void        *ground;
+    void        *wall;
     char        **map;
-    char        *wall;
+    char        *p_wall;
+    char        *p_coin;
+    char        *p_player;
+    char        *p_ground;
+    char        *p_door;
     char        *path;
-    int         width;
-    int         height;
+    int         x;
+    int         y;
+    int         img_width;
+    int         img_height;
     int         steps;
 }           t_game;
 
 
 
 
-char    **ft_read_map(t_game game, char **av);
+char    **ft_read_map(t_game *game, char **av);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
@@ -54,5 +58,12 @@ void    ft_put_err(void);
 void    ft_check_map(char **str);
 void	free_tab(char **tab);
 int     ft_check_ce(char **str);
+void    ft_images(t_game *game);
+void	ft_player(t_game *game, int i, int j);
+void	ft_coin(t_game *game, int i, int j);
+void	ft_door(t_game *game, int i, int j);
+void	ft_wall(t_game *game, int i, int j);
+void	ft_ground(t_game *game, int i, int j);
+void    ft_draw_map(t_game *game);
 
 # endif

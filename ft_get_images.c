@@ -6,43 +6,33 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 03:53:44 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/17 01:23:05 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 07:00:26 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_get_player(t_game game, int i, int j)
+void	ft_player(t_game *game, int i, int j)
 {
-	game.path = "./images/playerS.xpm";
-	mlx_xpm_file_to_image(game.mlx, game.path, &game.width, &game.height);
-	mlx_put_image_to_window(game.mlx, game.window, &game.width * i, &game.height * j);
+	mlx_put_image_to_window(game->mlx, game->window, game->player, i * 50, j * 50);
 }
 
-void	ft_get_coin(t_game game, int i, int j)
+void	ft_coin(t_game *game, int i, int j)
 {
-	gmae.path = "images/coin0.xpm";
-	mlx_xpm_file_to_image(game.mlx, game.path, &game.width, &game.height);
-	mlx_put_image_to_window(game.mlx, game.window, &game.width * i, &game.height * j);
+	mlx_put_image_to_window(game->mlx, game->window, game->coin, i * 50, j * 50);
 }
 
-void	ft_get_door(t_game game, int i, int j)
+void	ft_door(t_game *game, int i, int j)
 {
-	gmae.path = "./images/exit0.xpm";
-	mlx_xpm_file_to_image(game.mlx, game.path, &game.width, &game.height);
-	mlx_put_image_to_window(game.mlx, game.window, &game.width * i, &game.height * j);
+	mlx_put_image_to_window(game->mlx, game->window, game->door, i * 50, j * 50);
 }
 
-void	ft_get_wall(t_game game, int i, int j)
+void	ft_wall(t_game *game, int i, int j)
 {
-	game.path = "./images/wall.xpm";
-	mlx_xpm_file_to_image(game.mlx, game.path, &game.width, &game.height);
-	mlx_put_image_to_window(game.mlx, game.window, &game.width * i, &game.height * j);
+	mlx_put_image_to_window(game->mlx, game->window, game->wall, i * 50, j * 50);
 }
 
-void	ft_get_ground(t_game game, int i, int j)
+void	ft_ground(t_game *game, int i, int j)
 {
-	game.path = "./images/back.xpm";
-	mlx_xpm_file_to_image(game.mlx, game.path, &game.width, &game.height);
-	mlx_put_image_to_window(game.mlx, game.window, &game.width * i, &game.height * j);
+	mlx_put_image_to_window(game->mlx, game->window, game->ground, i * 50, j * 50);
 }

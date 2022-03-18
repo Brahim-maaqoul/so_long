@@ -6,26 +6,24 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:34:33 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/06 07:18:21 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 07:43:35 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "so_long.h"
 
-int main(void)
+int main(int ac, char **av)
 {
-  void *mlx;
-  void *window;
-  void *img;
-  int		img_width = 100;
-	int		img_height = 100;
-  char  *path = "./Untitled.xpm";
+  t_game game;
 
-  mlx = mlx_init();
-  window = mlx_new_window(mlx, 1000, 500, "Title");
+  memset(&game, 0, sizeof(t_game));
+  ft_read_map(&game, av);
+  ft_check_map(game.map);
+  game.map = mlx_init();
+  game.map = mlx_new_window(game.mlx, (game.img_width * 50), (game.img_height * 50), "Title");
   //mlx_pixel_put(mlx, window, 1, 1, 0XFFFFFF);
-  img = mlx_xpm_file_to_image(mlx, path, &img_width, &img_height);
-  mlx_put_image_to_window(mlx, window, img, 1, 1);
-  mlx_loop(mlx);
+  ft_images(&game);
+  ft_draw_map(&game);
+  mlx_loop(game.mlx);
   return (0);
 }
