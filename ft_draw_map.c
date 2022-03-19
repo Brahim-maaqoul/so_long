@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 07:18:01 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 07:41:08 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 23:32:34 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,24 @@ void    ft_draw_map(t_game *game)
     int i;
     int j;
 
-    i = 0;
     j = 0;
-    while (game->map[i])
+    while (game->map[j])
     {
-        while (game->map[i][j])
+        i = 0;
+        while (game->map[j][i])
         {
-            if (game->map[i][j] == '1')
+            if (game->map[j][i] == '1')
                 ft_wall(game, i, j);
-            else if (game->map[i][j] == '0')
+            else if (game->map[j][i] == '0')
                 ft_ground(game, i, j);
-            else if (game->map[i][j] == 'P')
+            else if (game->map[j][i] == 'P')
                 ft_player(game, i, j);
-            else if (game->map[i][j] == 'C')
+            else if (game->map[j][i] == 'C')
                 ft_coin(game, i, j);
-            else if (game->map[i][j] == 'E')
+            else if (game->map[j][i] == 'E')
                 ft_door(game, i, j);
-            j++;
+            i++;
         }
-        i++;
-        j = 0;
+        j++;
     }
 }

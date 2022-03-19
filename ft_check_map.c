@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 06:35:42 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 20:40:26 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,21 +95,22 @@ static int	ft_check_player(char **str)
 	return (1);
 }
 
-void	ft_check_map(char **str)
+void	ft_check_map(t_game *game)
 {
 	int	i;
 	int	nbr;
 
 	i = 0;
 	nbr = 0;
-	while (str[nbr])
+	while (game->map[nbr])
 		nbr++;
 	nbr--;
-	if (!ft_check_walls(str, i) || !ft_check_walls(str, nbr)
-		|| !ft_check_rocks(str))
+	if (!ft_check_walls(game->map, i) || !ft_check_walls(game->map, nbr)
+		|| !ft_check_rocks(game->map))
 		ft_put_err();
-	if (!ft_check_len(str) || !ft_check_player(str)
-		|| !ft_check_ce(str))
+	if (!ft_check_len(game->map) || !ft_check_player(game->map)
+		|| !ft_check_ce(game->map))
 		ft_put_err();
-
+	game->img_width = ft_strlen(game->map[0]);
+	game->img_height = nbr + 1;
 }

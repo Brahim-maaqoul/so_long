@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 03:48:37 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 07:45:44 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 20:20:02 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ char    **ft_read_map(t_game *game, char **av)
     i++;
     str[i] = NULL;
     game->map = str;
-    game->img_height = ft_strlen(game->map[0]);
-    game->img_height = lines;
+    // game->img_height = ft_strlen(str[0]);
+    // game->img_height = lines;
     return (game->map);
 }
 // int main(int ac, char **av)

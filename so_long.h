@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 07:34:42 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/18 23:10:12 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_game
     char        *p_player;
     char        *p_ground;
     char        *p_door;
-    char        *path;
+    void        *path;
     int         x;
     int         y;
     int         img_width;
@@ -55,7 +55,7 @@ char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 void    ft_put_err(void);
-void    ft_check_map(char **str);
+void    ft_check_map(t_game *game);
 void	free_tab(char **tab);
 int     ft_check_ce(char **str);
 void    ft_images(t_game *game);
@@ -65,5 +65,6 @@ void	ft_door(t_game *game, int i, int j);
 void	ft_wall(t_game *game, int i, int j);
 void	ft_ground(t_game *game, int i, int j);
 void    ft_draw_map(t_game *game);
+void	ft_map(t_game *game);
 
 # endif
