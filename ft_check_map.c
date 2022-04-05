@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 20:40:26 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/03/19 23:04:05 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	ft_check_map(t_game *game)
 	nbr = 0;
 	while (game->map[nbr])
 		nbr++;
+	if (ft_strlen(game->map[0]) == nbr)
+		ft_put_err();
 	nbr--;
 	if (!ft_check_walls(game->map, i) || !ft_check_walls(game->map, nbr)
 		|| !ft_check_rocks(game->map))
