@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:54:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/09 02:14:06 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/09 18:49:17 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void    ft_d(t_game *game)
         game->map[i][j] = '0';
         game->map[i][j + 1] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'd');
         ft_draw_map(game);
     }
     else if (ft_count_coins(game) == 0 && game->map[i][j + 1] == 'E')
@@ -36,7 +36,7 @@ void    ft_d(t_game *game)
         game->map[i][j] = '0';
         game->map[i][j + 1] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'd');
         exit (0);
     }
 }
@@ -56,7 +56,7 @@ void    ft_a(t_game *game)
         game->map[i][j] = '0';
         game->map[i][j - 1] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'a');
         ft_draw_map(game);
     }
     else if (ft_count_coins(game) == 0 && game->map[i][j - 1] == 'E')
@@ -65,7 +65,7 @@ void    ft_a(t_game *game)
         game->map[i][j] = '0';
         game->map[i][j - 1] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'a');
         exit (0);
     }
 }
@@ -85,7 +85,7 @@ void    ft_w(t_game *game)
         game->map[i][j] = '0';
         game->map[i - 1][j] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'w');
         ft_draw_map(game);
     }
     else if (ft_count_coins(game) == 0 && game->map[i - 1][j] == 'E')
@@ -94,7 +94,7 @@ void    ft_w(t_game *game)
         game->map[i][j] = '0';
         game->map[i - 1][j] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 'w');
         exit (0);
     }
 }
@@ -114,7 +114,7 @@ void    ft_s(t_game *game)
         game->map[i][j] = '0';
         game->map[i + 1][j] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 's');
         ft_draw_map(game);
     }
     else if (ft_count_coins(game) == 0 && game->map[i + 1][j] == 'E')
@@ -123,7 +123,7 @@ void    ft_s(t_game *game)
         game->map[i][j] = '0';
         game->map[i + 1][j] = 'P';
         game->steps++;
-        ft_print_steps(game);
+        ft_print_steps(game, i, j, 's');
         exit (0);
     }
 }
