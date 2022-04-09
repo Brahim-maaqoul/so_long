@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 03:53:44 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 23:17:09 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/09 01:29:42 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_player(t_game *game, int i, int j)
 {
+	game->playerrrr.x = i;
+	game->playerrrr.y = j;
 	mlx_put_image_to_window(game->mlx, game->window, game->player, i * 50, j * 50);
 }
 

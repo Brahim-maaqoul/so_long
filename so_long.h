@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 23:10:12 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/09 02:16:54 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@
 # include <stdio.h>
 # include <string.h>
 
+typedef struct  s_player
+{
+    int     x;
+    int     y;
+}           t_player;
+
 typedef struct s_game
 {
+    t_player    playerrrr;
     void        *mlx;
     void        *window;
     void        *player;
@@ -35,10 +42,9 @@ typedef struct s_game
     char        *p_ground;
     char        *p_door;
     void        *path;
-    int         x;
-    int         y;
     int         img_width;
     int         img_height;
+    int         collected;
     int         steps;
 }           t_game;
 
@@ -66,5 +72,12 @@ void	ft_wall(t_game *game, int i, int j);
 void	ft_ground(t_game *game, int i, int j);
 void    ft_draw_map(t_game *game);
 void	ft_map(t_game *game);
+int     ft_count_coins(t_game *game);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+int     ft_move(int key, t_game *game);
+void    ft_print_steps(t_game *game);
+int     ft_close(void);
 
 # endif

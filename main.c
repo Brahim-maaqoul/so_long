@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:34:33 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/18 23:24:20 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/09 02:17:00 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(int ac, char **av)
   ft_images(&game);
   // ft_map(&game);
   ft_draw_map(&game);
+  mlx_hook(game.window, 2, 1L<<0, ft_move, &game);
+  mlx_hook(game.window, 17, 1L<<0, ft_close, &game);
   // printf("%d\n", game.img_width);
   // printf("%d\n", game.img_height);
   mlx_loop(game.mlx);
