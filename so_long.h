@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/09 18:49:31 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/12 01:39:53 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void    ft_draw_map(t_game *game);
 void	ft_map(t_game *game);
 int     ft_count_coins(t_game *game);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_check_extension(char *av);
 int     ft_move(int key, t_game *game);
 void    ft_print_steps(t_game *game, int i, int j, char c);
 int     ft_close(void);
