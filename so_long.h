@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 18:11:44 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/13 21:41:51 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ typedef struct s_game
 	void		*door;
 	void		*ground;
 	void		*wall;
+	void		*enemy;
 	char		**map;
 	char		*p_wall;
+	char		*p_enemy;
 	char		*p_coin;
 	char		*p_player;
 	char		*p_ground;
@@ -74,5 +76,11 @@ int		ft_move(int key, t_game *game);
 void	ft_print_steps(t_game *game, int i, int j, char c);
 int		ft_close(void);
 void	ft_image_by_path(t_game *game);
+void	ft_check_map_bonus(t_game *game);
+void	ft_enemy(t_game *game, int i, int j);
+void	ft_image_bonus(t_game *game);
+int		ft_move_bonus(int key, t_game *game);
+void	ft_draw_map_bonus(t_game *game);
+void	ft_print_steps_bonus(t_game *game, int i, int j, char c);
 
 #endif
