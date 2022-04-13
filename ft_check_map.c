@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/19 23:04:05 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:20:03 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ static int	ft_check_rocks(char **str)
 		while (str[i][j])
 		{
 			if ((str[i][j] != '1' && str[i][j] != '0')
-					&& (str[i][j] != 'C' && str[i][j] != 'E' && str[i][j] != 'P'))
+					&& (str[i][j] != 'C' && str[i][j] != 'E'
+					&& str[i][j] != 'P'))
 				return (0);
 			j++;
 		}
@@ -97,8 +98,8 @@ static int	ft_check_player(char **str)
 
 void	ft_check_map(t_game *game)
 {
-	int	i;
-	int	nbr;
+	int		i;
+	size_t	nbr;
 
 	i = 0;
 	nbr = 0;

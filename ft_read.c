@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 23:08:22 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/03/08 08:19:11 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/13 18:01:06 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_read(char	*str, int fd)
 {
 	char	*buff;
 	int		r;
- 
+
 	r = 1;
 	buff = (char *) malloc(2);
 	if (!buff)

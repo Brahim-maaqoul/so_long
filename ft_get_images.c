@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 03:53:44 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/09 01:29:42 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:26:39 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,30 @@ void	ft_player(t_game *game, int i, int j)
 {
 	game->playerrrr.x = i;
 	game->playerrrr.y = j;
-	mlx_put_image_to_window(game->mlx, game->window, game->player, i * 50, j * 50);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->player, i * 50, j * 50);
 }
 
 void	ft_coin(t_game *game, int i, int j)
 {
-	mlx_put_image_to_window(game->mlx, game->window, game->coin, i * 50, j * 50);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->coin, i * 50, j * 50);
 }
 
 void	ft_door(t_game *game, int i, int j)
 {
-	mlx_put_image_to_window(game->mlx, game->window, game->door, i * 50, j * 50);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->door, i * 50, j * 50);
 }
 
 void	ft_wall(t_game *game, int i, int j)
 {
-	mlx_put_image_to_window(game->mlx, game->window, game->wall, i * 50, j * 50);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->wall, i * 50, j * 50);
 }
 
 void	ft_ground(t_game *game, int i, int j)
 {
-	mlx_put_image_to_window(game->mlx, game->window, game->ground, i * 50, j * 50);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->ground, i * 50, j * 50);
 }

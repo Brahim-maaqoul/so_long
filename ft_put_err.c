@@ -6,12 +6,11 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:05:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/12 01:50:58 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:55:45 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	ft_put_err(void)
 {
