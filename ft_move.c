@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:54:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 17:38:56 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/15 02:33:28 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ static void	ft_d(t_game *game)
 	else if (ft_count_coins(game) == 0 && game->map[i][j + 1] == 'E')
 	{
 		game->playerrrr.x++;
-		game->map[i][j] = '0';
-		game->map[i][j + 1] = 'P';
 		game->steps++;
 		ft_print_steps(game, i, j, 'd');
+		free_tab(game);
 		exit (0);
 	}
 }
@@ -62,10 +61,9 @@ static void	ft_a(t_game *game)
 	else if (ft_count_coins(game) == 0 && game->map[i][j - 1] == 'E')
 	{
 		game->playerrrr.x--;
-		game->map[i][j] = '0';
-		game->map[i][j - 1] = 'P';
 		game->steps++;
 		ft_print_steps(game, i, j, 'a');
+		free_tab(game);
 		exit (0);
 	}	
 }
@@ -91,10 +89,9 @@ static void	ft_w(t_game *game)
 	else if (ft_count_coins(game) == 0 && game->map[i - 1][j] == 'E')
 	{
 		game->playerrrr.y--;
-		game->map[i][j] = '0';
-		game->map[i - 1][j] = 'P';
 		game->steps++;
 		ft_print_steps(game, i, j, 'w');
+		free_tab(game);
 		exit (0);
 	}	
 }
@@ -120,10 +117,9 @@ static void	ft_s(t_game *game)
 	else if (ft_count_coins(game) == 0 && game->map[i + 1][j] == 'E')
 	{
 		game->playerrrr.y++;
-		game->map[i][j] = '0';
-		game->map[i + 1][j] = 'P';
 		game->steps++;
 		ft_print_steps(game, i, j, 's');
+		free_tab(game);
 		exit (0);
 	}
 }

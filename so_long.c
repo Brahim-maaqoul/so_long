@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:34:33 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 18:04:36 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/15 14:39:18 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int ac, char **av)
 		mlx_hook(game.window, 2, 1L << 0, ft_move, &game);
 		mlx_hook(game.window, 17, 1L << 0, ft_close, &game);
 		mlx_loop(game.mlx);
-		free_tab(game.map);
 		return (0);
 	}
 	ft_put_err();
