@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:17:56 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 14:39:32 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/15 15:12:37 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int ac, char **av)
 				(game.img_height * 50), "So long");
 		ft_image_bonus(&game);
 		ft_draw_map_bonus(&game);
-		mlx_hook(game.window, 2, 1L << 0, ft_move_bonus, &game);
-		mlx_hook(game.window, 17, 1L << 0, ft_close, &game);
+		mlx_hook(game.window, 2, 1L, ft_move_bonus, &game);
+		mlx_hook(game.window, 17, 1L, ft_close, &game);
 		mlx_loop(game.mlx);
 		return (0);
 	}

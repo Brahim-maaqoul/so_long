@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:54:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 02:33:28 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/15 14:44:53 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	ft_d(t_game *game)
 		game->playerrrr.x++;
 		game->steps++;
 		ft_print_steps(game, i, j, 'd');
-		free_tab(game);
 		exit (0);
 	}
 }
@@ -63,7 +62,6 @@ static void	ft_a(t_game *game)
 		game->playerrrr.x--;
 		game->steps++;
 		ft_print_steps(game, i, j, 'a');
-		free_tab(game);
 		exit (0);
 	}	
 }
@@ -91,7 +89,6 @@ static void	ft_w(t_game *game)
 		game->playerrrr.y--;
 		game->steps++;
 		ft_print_steps(game, i, j, 'w');
-		free_tab(game);
 		exit (0);
 	}	
 }
@@ -119,7 +116,6 @@ static void	ft_s(t_game *game)
 		game->playerrrr.y++;
 		game->steps++;
 		ft_print_steps(game, i, j, 's');
-		free_tab(game);
 		exit (0);
 	}
 }
