@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:21:13 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 22:06:58 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 02:08:14 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_draw_map_bonus(t_game *game)
 			else if (game->map[j][i] == '0')
 				ft_ground(game, i, j);
 			else if (game->map[j][i] == 'P')
-				ft_player(game, i, j);
+				ft_player_bonus(game, i, j);
 			else if (game->map[j][i] == 'C')
 				ft_coin(game, i, j);
 			else if (game->map[j][i] == 'E')

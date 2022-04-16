@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 15:05:37 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 02:05:38 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ int		ft_move_bonus(int key, t_game *game);
 void	ft_draw_map_bonus(t_game *game);
 void	ft_print_steps_bonus(t_game *game, int i, int j, char c);
 void	ft_check_image_path(char *path);
+char	*ft_itoa(int n);
+void	ft_player_bonus(t_game *game, int i, int j);
 
 #endif
