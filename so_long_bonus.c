@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:17:56 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 01:49:16 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 22:26:18 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
+		game.steps = 0;
 		ft_check_extension(av[1]);
 		ft_read_map(&game, av);
 		ft_check_map_bonus(&game);
@@ -26,10 +27,11 @@ int	main(int ac, char **av)
 				(game.img_height * 50), "So long");
 		ft_image_bonus(&game);
 		ft_draw_map_bonus(&game);
-		mlx_hook(game.window, 2, 1L, ft_move_bonus, &game);
-		mlx_hook(game.window, 17, 1L, ft_close, &game);
+		mlx_hook(game.window, 2, 1L << 0, ft_move_bonus, &game);
+		mlx_hook(game.window, 17, 1L << 0, ft_close, &game);
+		mlx_loop_hook(game.mlx, ft_move_enemy, &game);
 		mlx_loop(game.mlx);
 		return (0);
 	}
-	ft_put_err();
+	ft_put_err(1);
 }

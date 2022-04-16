@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 02:05:38 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 22:47:14 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_read(char	*str, int fd);
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 void	ft_putstr_fd(char *s, int fd);
-void	ft_put_err(void);
+void	ft_put_err(int i);
 void	ft_check_map(t_game *game);
 void	free_tab(t_game *game);
 int		ft_check_ce(char **str);
@@ -75,7 +75,7 @@ void	ft_check_extension(char *av);
 int		ft_move(int key, t_game *game);
 void	ft_print_steps(t_game *game, int i, int j, char c);
 int		ft_close(void);
-void	ft_image_by_path(t_game *game);
+void	ft_change_player(t_game *game);
 void	ft_check_map_bonus(t_game *game);
 void	ft_enemy(t_game *game, int i, int j);
 void	ft_image_bonus(t_game *game);
@@ -85,5 +85,8 @@ void	ft_print_steps_bonus(t_game *game, int i, int j, char c);
 void	ft_check_image_path(char *path);
 char	*ft_itoa(int n);
 void	ft_player_bonus(t_game *game, int i, int j);
+void	ft_change_coin(t_game *game);
+int		ft_move_enemy(t_game *game);
+void	ft_rotate_coin(t_game *game, int i, int j);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 02:11:31 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 17:54:28 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 22:08:55 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,25 +54,25 @@ static void	ft_change_moves(t_game *game, int i, int j, char c)
 	if (c == 'd')
 	{
 		game->p_player = "./images/playerD.xpm";
-		ft_image_by_path(game);
+		ft_change_player(game);
 		ft_player(game, i, j);
 	}
 	else if (c == 'a')
 	{
 		game->p_player = "./images/playerA.xpm";
-		ft_image_by_path(game);
+		ft_change_player(game);
 		ft_player(game, i, j);
 	}
 	else if (c == 'w')
 	{
 		game->p_player = "./images/playerW.xpm";
-		ft_image_by_path(game);
+		ft_change_player(game);
 		ft_player(game, i, j);
 	}
 	else if (c == 's')
 	{
 		game->p_player = "./images/playerS.xpm";
-		ft_image_by_path(game);
+		ft_change_player(game);
 		ft_player(game, i, j);
 	}
 }

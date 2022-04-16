@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 06:31:56 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 15:05:27 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 20:33:08 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	ft_check_image_path(char *path)
 	
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		ft_put_err();
+		ft_put_err(3);
 }

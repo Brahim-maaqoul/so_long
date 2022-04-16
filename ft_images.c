@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 07:00:35 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 22:48:26 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 22:07:45 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ void	ft_images(t_game *game)
 			&game->img_width, &game->img_height);
 }
 
-void	ft_image_by_path(t_game *game)
+void	ft_change_player(t_game *game)
 {
+	ft_check_image_path(game->p_player);
 		game->player = mlx_xpm_file_to_image(game->mlx, game->p_player,
 			&game->img_width, &game->img_height);
 }

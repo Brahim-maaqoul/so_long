@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 14:32:05 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 20:33:34 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,14 @@ void	ft_check_map(t_game *game)
 	while (game->map[nbr])
 		nbr++;
 	if (ft_strlen(game->map[0]) == nbr)
-		ft_put_err();
+		ft_put_err(1);
 	nbr--;
 	if (!ft_check_walls(game->map, i) || !ft_check_walls(game->map, nbr)
 		|| !ft_check_rocks(game->map))
-		ft_put_err();
+		ft_put_err(1);
 	if (!ft_check_len(game->map) || !ft_check_player(game->map)
 		|| !ft_check_ce(game->map))
-		ft_put_err();
+		ft_put_err(1);
 	game->img_width = ft_strlen(game->map[0]);
 	game->img_height = nbr + 1;
 }

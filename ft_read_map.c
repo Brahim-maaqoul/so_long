@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 03:48:37 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 14:33:09 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 20:34:57 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ static void	ft_read_map1(char **av, t_game *game)
 
 	nbr = ft_count_lines(av);
 	if (!nbr)
-		ft_put_err();
+		ft_put_err(1);
 	fd = open(av[1], O_RDONLY);
 	game->map = (char **) malloc(sizeof(char *) * nbr);
 	if (!game->map)
-		ft_put_err();
+		ft_put_err(1);
 	nbr = 0;
 	while (1)
 	{
