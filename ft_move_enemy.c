@@ -6,16 +6,16 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 21:49:34 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/17 13:21:28 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 19:34:16 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_rotate_coin(t_game *game, int i, int j, int c)
+static void	ft_rotate_coin(t_game *game, int i, int j, int c)
 {
 	static int cp;
-	int b;
+	int 		b;
 
 	b = c * 2;
 	if (cp < 2 * b)
@@ -37,6 +37,25 @@ void	ft_rotate_coin(t_game *game, int i, int j, int c)
 		cp = 0;
 }
 
+static void	ft_movenemy(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = game->enemyyy.y;
+	j = game->enemyyy.x;
+	if (game->map[i][j + 1] == '0' && game->map[i][j + 1] != '1')
+	{
+		game->map[i][j] = '0';
+		game->map[i][j + 1] = 'X';
+	}
+	if (game->map[i][j - 1] == '0' && game->map[i][j - 1] != '1')
+	{
+		game->map[i][j] = '0';
+		game->map[i][j - 1] = 'X';
+	}
+}
+
 int	ft_move_enemy(t_game *game)
 {
 	int j;
@@ -46,7 +65,7 @@ int	ft_move_enemy(t_game *game)
 	j = 0;
 	c = ft_count_coins(game);
 	while (game->map[j])
-	{	
+	{
 		i = 0;
 		while (game->map[j][i])
 		{
@@ -56,5 +75,6 @@ int	ft_move_enemy(t_game *game)
 		}
 		j++;
 	}
+	ft_movenemy(game);
 	return (0);
 }

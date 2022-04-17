@@ -6,12 +6,12 @@
 #    By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 22:04:20 by bmaaqoul          #+#    #+#              #
-#    Updated: 2022/04/16 22:26:42 by bmaaqoul         ###   ########.fr        #
+#    Updated: 2022/04/17 15:58:31 by bmaaqoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SO_LONG = so_long
-SO_LONG_BONUS = so_long_bonus
+NAME1 = so_long
+NAME2 = so_long_bonus
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -31,18 +31,18 @@ OBJB = $(BNS:.c=.o)
 %.o : %.c so_long.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all : $(SO_LONG)
-bonus : $(SO_LONG_BONUS)
+all : $(NAME1)
+bonus : $(NAME2)
 
-$(SO_LONG) : $(OBJS)
+$(NAME1) : $(OBJS)
 	$(CC) $(CFLAGS) $(MLX_FLAGS) -o $@ $^
-$(SO_LONG_BONUS) : $(OBJB)
+$(NAME2) : $(OBJB)
 	$(CC) $(CFLAGS) $(MLX_FLAGS) -o $@ $^
 
 clean :
 	rm -rf $(OBJS) $(OBJB)
 
 fclean : clean
-	rm -rf $(SO_LONG) $(SO_LONG_BONUS)
+	rm -rf $(NAME1) $(NAME2)
 
 re : fclean all

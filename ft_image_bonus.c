@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:20:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 22:36:11 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 16:17:59 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	ft_change_player(t_game *game)
 
 void	ft_enemy(t_game *game, int i, int j)
 {
+	game->enemyyy.x = i;
+	game->enemyyy.y = j;
 	mlx_put_image_to_window(game->mlx, game->window,
 		game->enemy, i * 50, j * 50);
 }

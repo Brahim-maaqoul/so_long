@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 06:05:57 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 20:33:02 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 14:24:32 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_put_err(int i)
 		ft_putstr_fd("Error\nInvalid extension !", 1);
 	else if (i == 3)
 		ft_putstr_fd("Error\nInvalid image path !", 1);
+	else if (i == 4)
+		ft_putstr_fd("You lost !\n", 1);
 	exit (1);
 }
 
