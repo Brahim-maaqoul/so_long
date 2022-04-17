@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:54:18 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/15 14:44:53 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/16 23:33:43 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ static void	ft_d(t_game *game)
 	if (game->map[i][j + 1] == '0' || game->map[i][j + 1] == 'C')
 	{
 		game->playerrrr.x++;
-		if (game->map[i][j + 1] == 'C')
-			game->collected--;
 		game->map[i][j] = '0';
 		game->map[i][j + 1] = 'P';
 		game->steps++;
@@ -49,8 +47,6 @@ static void	ft_a(t_game *game)
 	if (game->map[i][j - 1] == '0' || game->map[i][j - 1] == 'C')
 	{
 		game->playerrrr.x--;
-		if (game->map[i][j + 1] == 'C')
-			game->collected--;
 		game->map[i][j] = '0';
 		game->map[i][j - 1] = 'P';
 		game->steps++;
@@ -76,8 +72,6 @@ static void	ft_w(t_game *game)
 	if (game->map[i - 1][j] == '0' || game->map[i - 1][j] == 'C')
 	{
 		game->playerrrr.y--;
-		if (game->map[i - 1][j] == 'C')
-			game->collected--;
 		game->map[i][j] = '0';
 		game->map[i - 1][j] = 'P';
 		game->steps++;
@@ -103,8 +97,6 @@ static void	ft_s(t_game *game)
 	if (game->map[i + 1][j] == '0' || game->map[i + 1][j] == 'C')
 	{
 		game->playerrrr.y++;
-		if (game->map[i + 1][j] == 'C')
-			game->collected--;
 		game->map[i][j] = '0';
 		game->map[i + 1][j] = 'P';
 		game->steps++;

@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:00:04 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/13 17:23:31 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 00:24:36 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_count_coins(t_game *game)
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == 'C')
-			cp++;
+				cp++;
 			j++;
 		}
 		i++;

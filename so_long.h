@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 22:47:14 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 00:19:55 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ typedef struct s_game
 	void		*path;
 	int			img_width;
 	int			img_height;
-	int			collected;
 	int			steps;
 }		t_game;
 
@@ -87,6 +86,6 @@ char	*ft_itoa(int n);
 void	ft_player_bonus(t_game *game, int i, int j);
 void	ft_change_coin(t_game *game);
 int		ft_move_enemy(t_game *game);
-void	ft_rotate_coin(t_game *game, int i, int j);
+void	ft_rotate_coin(t_game *game, int i, int j, int c);
 
 #endif
