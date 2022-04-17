@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 21:49:34 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/17 00:26:27 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/17 13:21:28 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_rotate_coin(t_game *game, int i, int j, int c)
 	ft_change_coin(game);
 	ft_coin(game, i, j);
 	cp++;
-	if (cp == 7 * b)
+	if (cp >= 7 * b)
 		cp = 0;
 }
 
@@ -44,9 +44,9 @@ int	ft_move_enemy(t_game *game)
 	int	c;
 
 	j = 0;
+	c = ft_count_coins(game);
 	while (game->map[j])
 	{	
-		c = ft_count_coins(game);
 		i = 0;
 		while (game->map[j][i])
 		{
