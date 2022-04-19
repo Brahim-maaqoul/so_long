@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/19 13:54:13 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/19 14:25:34 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ typedef struct s_game
 	char		*p_player;
 	char		*p_ground;
 	char		*p_door;
-	void		*path;
 	int			img_width;
 	int			img_height;
 	int			steps;
+	char		*str;
 }		t_game;
 
 char	**ft_read_map(t_game *game, char **av);

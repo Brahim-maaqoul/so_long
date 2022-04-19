@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:20:43 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/19 13:51:34 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/19 14:23:11 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,15 @@ void	ft_enemy(t_game *game, int i, int j)
 
 void	ft_player_bonus(t_game *game, int i, int j)
 {
-	char	*str;
-
 	game->playerrrr.x = i;
 	game->playerrrr.y = j;
 	mlx_put_image_to_window(game->mlx, game->window,
 		game->player, i * 50, j * 50);
-	str = ft_itoa(game->steps);
+	game->str = ft_itoa(game->steps);
 	mlx_string_put(game->mlx, game->window, 1,
 		1, 0x0000ff, "Number of steps :");
-	mlx_string_put(game->mlx, game->window, 200, 1, 0x0000ff, str);
+	mlx_string_put(game->mlx, game->window, 200, 1, 0x0000ff, game->str);
+	free (game->str);
 }
 
 void	ft_change_coin(t_game *game)
