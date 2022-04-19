@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 06:31:56 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/16 20:33:08 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/19 13:51:03 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_check_ce(char **str)
 void	ft_check_image_path(char *path)
 {
 	int	fd;
-	
+
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 		ft_put_err(3);

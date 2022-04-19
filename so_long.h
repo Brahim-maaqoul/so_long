@@ -6,7 +6,7 @@
 /*   By: bmaaqoul <bmaaqoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 04:56:05 by bmaaqoul          #+#    #+#             */
-/*   Updated: 2022/04/17 18:19:46 by bmaaqoul         ###   ########.fr       */
+/*   Updated: 2022/04/19 13:54:13 by bmaaqoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <fcntl.h>
-#include <stdio.h>
 
 typedef struct s_player
 {
@@ -94,5 +93,9 @@ char	*ft_itoa(int n);
 void	ft_player_bonus(t_game *game, int i, int j);
 void	ft_change_coin(t_game *game);
 int		ft_move_enemy(t_game *game);
+void	ft_enemy_right(t_game *game);
+void	ft_enemy_left(t_game *game);
+void	ft_enemy_down(t_game *game);
+void	ft_enemy_up(t_game *game);
 
 #endif
